@@ -7,6 +7,8 @@ def main():
     parsed = json.loads(r.text)
 
     last_status = parsed[28]["results"][-1]
-    print(json.dumps(last_status, indent=4))
+    ret = last_status["success"]
+    print(json.dumps(ret, indent=4))
+    return ret
 
 main()
